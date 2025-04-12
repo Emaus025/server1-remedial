@@ -7,8 +7,9 @@ require('dotenv').config();
 const app = express();
 
 // Configura CORS para permitir solicitudes desde el dominio de tu frontend
+// Modifica CORS para aceptar el dominio de Vercel
 app.use(cors({
-  origin: 'http://localhost:3000', // Solo permitir conexiones locales
+  origin: ['http://localhost:3000', 'https://frontend-remedial.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
